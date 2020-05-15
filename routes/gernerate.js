@@ -24,7 +24,7 @@ router.get('/a' , async (req, res) => {
                     const tempUser = await User.findById(userInList)
                     uName = tempUser.name
                     //console.log(tempUser.name)
-                    if (tempUser.its != req.body.its) loop = false
+                    if (tempUser.name != req.body.name) loop = false
                     if (mem.count < 2) loop = false
                 } catch (e) {
                     console.log(e)
@@ -59,7 +59,7 @@ router.get('/b' , async (req, res) => {
                     const tempUser = await User.findById(userInList)
                     uName = tempUser.name
                     //console.log(tempUser.name)
-                    if (tempUser.its != req.body.its) loop = false
+                    if (tempUser.name != req.body.name) loop = false
                     if (mem.count < 2) loop = false
                 } catch (e) {
                     console.log(e)
