@@ -23,7 +23,7 @@ router.get('/a' , async (req, res) => {
                     const userInList = mem.list[pos];
                     const tempUser = await User.findById(userInList)
                     uName = tempUser.name
-                    //console.log(tempUser.name)
+                    
                     if (tempUser.its !== req.body.its) {
                         res.json(uName);
                         break
@@ -61,7 +61,7 @@ router.get('/b' , async (req, res) => {
                     const userInList = mem.list[pos];
                     const tempUser = await User.findById(userInList)
                     uName = tempUser.name
-                    console.log(tempUser.name)
+                    console.log(tempUser.its, req.body.its)
                     if (tempUser.its !== req.body.its) {
                         res.json(uName);
                         break
