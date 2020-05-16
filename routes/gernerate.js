@@ -5,7 +5,7 @@ const Members = require('../models/Members');
 const router = express.Router();
 
 // @params its
-router.get('/a' , async (req, res) => {
+router.post('/a' , async (req, res) => {
     try{
         const mem = await Members.findOne({
             name: "listA"
@@ -43,7 +43,7 @@ router.get('/a' , async (req, res) => {
 })
 
 // @params its
-router.get('/b' , async (req, res) => {
+router.post('/b' , async (req, res) => {
     try{
         const mem = await Members.findOne({
             name: "listB"
@@ -61,7 +61,8 @@ router.get('/b' , async (req, res) => {
                     const userInList = mem.list[pos];
                     const tempUser = await User.findById(userInList)
                     uName = tempUser.name
-                    console.log(tempUser.its, req.body.its)
+                    // console.log(tempUser.its, req.body.its)
+                    // console.log(req.body.its)
                     if (tempUser.its !== req.body.its) {
                         res.json(uName);
                         break
@@ -71,7 +72,7 @@ router.get('/b' , async (req, res) => {
                     console.log(e)
                 }
             }
-            console.log(`Final: ${uName}`)
+            // console.log(`Final: ${uName}`)
             //res.json(uName)
         }
     } catch (e){

@@ -88,6 +88,7 @@ router.post('/add', (req, res) => {
 router.post('/login', async (req, res) => {
     try{
         const foundUser = await User.findOne({its: req.body.its})
+        //console.log(req.body.its)
         if (!foundUser){
             res.json({pass : false,
             message: "Access Denied"})
