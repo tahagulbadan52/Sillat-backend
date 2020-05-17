@@ -17,7 +17,11 @@ router.post('/addList', (req, res) => {
 
 })
 
+router.get('/getAll', (req, res) => {
 
+    User.find().then(users => res.json(users)).catch(e => console.log(e))
+
+})
 
 // @params name, its
 router.post('/add', (req, res) => {
